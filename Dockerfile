@@ -4,7 +4,7 @@ MAINTAINER Nikita Chernyi <developer.nikus@gmail.com>
 ENV APP_DIR /var/www
 ENV APP_ENV dev
 
-RUN apk --no-cache add nginx php7 php7-fpm php7-json php7-ctype php7-mbstring php7-curl && \
+RUN apk --no-cache add nginx php7 php7-fpm php7-json php7-ctype php7-mbstring php7-curl php7-opcache && \
     rm -rf /var/cache/apk/* /tmp/*
 
 COPY ./etc /etc
