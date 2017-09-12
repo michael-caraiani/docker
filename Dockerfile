@@ -1,6 +1,8 @@
 FROM alpine:latest
 MAINTAINER Nikita Chernyi <developer.nikus@gmail.com>
 
+ENV PHP_OPCACHE_ENABLE 0
+
 ENV APP_DIR /var/www
 ENV APP_ENV dev
 
