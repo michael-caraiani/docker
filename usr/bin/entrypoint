@@ -6,8 +6,8 @@ crond -b
 nginx
 php-fpm7 -F -R
 
-phinx || PHINX=false
-swagger || true
+phinx > /dev/null || PHINX=false
+swagger > /dev/null || true
 
 if [ "$PHINX" = true ] ; then
     phinx migrate
