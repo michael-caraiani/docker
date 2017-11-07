@@ -1,13 +1,11 @@
 #!/bin/sh
 
 PHINX=true
-
-crond -b
-nginx
-php-fpm7 -F -R
-
 phinx > /dev/null || PHINX=false
 swagger > /dev/null || true
+
+echo "PHINX: $PHINX"
+echo "SWAGGER: $SWAGGER"
 
 if [ "$PHINX" = true ] ; then
     phinx migrate
@@ -15,3 +13,7 @@ if [ "$PHINX" = true ] ; then
         phinx seed:run
     fi
 fi
+
+crond -b
+nginx
+php-fpm7 -F -R
