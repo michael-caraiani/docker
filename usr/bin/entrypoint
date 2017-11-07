@@ -1,11 +1,7 @@
 #!/bin/sh
 
 PHINX=true
-phinx > /dev/null || PHINX=false
-swagger > /dev/null || true
-
-echo "PHINX: $PHINX"
-echo "SWAGGER: $SWAGGER"
+phinx help > /dev/null || PHINX=false
 
 if [ "$PHINX" = true ] ; then
     phinx migrate
