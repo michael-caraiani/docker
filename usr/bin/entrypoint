@@ -10,6 +10,6 @@ if [ "$PHINX" = true ] ; then
     fi
 fi
 
-crond -b
+crond -b -L /proc/1/fd/1
 nginx
 php-fpm7 -F -R

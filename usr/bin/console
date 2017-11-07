@@ -1,4 +1,4 @@
 #!/bin/sh
 
 cd $APP_DIR/app/public
-php7 console.php "$@" &> /proc/1/fd/1
+php7 console.php "$@"
